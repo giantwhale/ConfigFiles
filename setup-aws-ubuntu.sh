@@ -56,6 +56,7 @@ cd "$BASEDIR/src"
 rm -rf tmux-2.4*
 
 # ananconda3
+# enable by passing --with-python3, in case you use AMI with preinstalled python.
 if $WITH_PYTHON3 ; then
     cd "$BASEDIR/src"
     wget https://repo.continuum.io/archive/Anaconda3-4.3.1-Linux-x86_64.sh
