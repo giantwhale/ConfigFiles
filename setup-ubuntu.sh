@@ -78,7 +78,7 @@ cd "$BASEDIR/src"
 wget https://cloud.r-project.org/src/base/R-3/R-3.4.0.tar.gz
 tar xf R-3.4.0.tar.gz
 cd R-3.4.0
-./configure --prefix="$HOME/apps/R-3.4.0"
+./configure --prefix="$HOME/apps/R-3.4.0" --enable-R-shlib
 make && make install
 
 declare -a executables=("R" "Rscript")
@@ -93,5 +93,16 @@ Rscript install_R_packages.R
 mkdir -p "$HOME/pkglib/R-3.4.0"
 echo ".libPaths('$HOME/pkglib/R-3.4.0')" > "${HOME}/.Rprofile"
 Rscript "${BASEDIR}/install_R_pkgs.R"
+
+# Rstudio Server
+sudo apt install -y gdebi-core
+sudo mkdir -p /etc/rstudio
+echo 'rsession-which-r=/home/ubuntu/apps/bin/R' > /etc/rstudio/rserver.conf
+cd "${BASEDIR}/src"
+wget https://download2.rstudio.org/rstudio-server-1.0.143-amd64.deb
+sudo gdebi rstudio-server-1.0.143-amd64.deb
+sudo systemctl restart rstudio-server.service
+rm -f rstudio-server-1.0.143-amd64.deb
+cd "${BASEDIR}"
 
 
