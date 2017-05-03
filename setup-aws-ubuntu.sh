@@ -43,7 +43,11 @@ sudo apt install -y build-essential gcc libevent-dev libncurses5-dev gfortran li
 sudo apt install -y liblzma-dev libblas-dev libbz2-dev libpcre3-dev libcurl4-openssl-dev
 sudo apt install -y texlive-base texlive-latex-base #texlive-fonts-recommended texlive-fonts-extra
 sudo apt install -y default-jre default-jdk
-      
+
+# Enable X for R Plotting
+# per https://unix.stackexchange.com/questions/31283/error-in-r-unable-to-open-connection-to-x11
+sudo apt install -y xvfb xauth xfonts-base
+# Xvfb :0 -ac -screen 0 1960x2000x24 &  # add a virtual X env
 
 # tmux
 cd "$BASEDIR/src"
