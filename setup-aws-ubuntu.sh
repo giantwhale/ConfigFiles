@@ -49,6 +49,10 @@ sudo apt install -y default-jre default-jdk
 sudo apt install -y xvfb xauth xfonts-base
 # Xvfb :0 -ac -screen 0 1960x2000x24 &  # add a virtual X env
 
+# install font for R so ggplot can be properly displayed
+sudo apt install -y t1-xfree86-nonfree ttf-xfree86-nonfree ttf-xfree86-nonfree-syriac xfonts-75dpi xfonts-100dpi
+
+
 # tmux
 cd "$BASEDIR/src"
 wget https://github.com/tmux/tmux/releases/download/2.4/tmux-2.4.tar.gz
