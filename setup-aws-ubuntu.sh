@@ -67,14 +67,14 @@ rm -rf tmux-2.4*
 if $WITH_PYTHON3 ; then
     cd "$BASEDIR/src"
     wget https://repo.continuum.io/archive/Anaconda3-4.4.0-Linux-x86_64.sh
-    bash Anaconda3-4.3.1-Linux-x86_64.sh -b -p "$HOME/apps/anaconda3"
+    bash Anaconda3-4.4.0-Linux-x86_64.sh -b -p "$HOME/apps/anaconda3"
     declare -a executables=("python" "ipython" "jupyter" "pip" "conda")
     for exec in "${executables[@]}"
     do
 	rm -f "${HOME}/apps/bin/$exec"
 	ln -s "${HOME}/apps/anaconda3/bin/$exec" "${HOME}/apps/bin/$exec"
     done     
-    rm -f Anaconda3-4.3.1-Linux-x86_64.sh
+    rm -f Anaconda3-*sh
 
     conda upgrade -y numba
     conda upgrade -y numpy pandas scikit-learn
