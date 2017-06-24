@@ -18,7 +18,7 @@ done
 mkdir -p ~/apps/bin
 cp ~/.bashrc ~/.bashrc_bk
 
-sudo apt install emacs
+sudo apt install -y emacs
 
 # setting up config file
 # =================================================
