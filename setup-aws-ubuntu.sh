@@ -5,7 +5,6 @@ echo $BASEDIR
 # =================================================
 WITH_PYTHON3=false
 
-
 for arg in "$@"
 do
     if [ "$arg" == "--with-python3" ]; then
@@ -67,7 +66,7 @@ rm -rf tmux-2.4*
 # enable by passing --with-python3, in case you use AMI with preinstalled python.
 if $WITH_PYTHON3 ; then
     cd "$BASEDIR/src"
-    wget https://repo.continuum.io/archive/Anaconda3-4.3.1-Linux-x86_64.sh
+    wget https://repo.continuum.io/archive/Anaconda3-4.4.0-Linux-x86_64.sh
     bash Anaconda3-4.3.1-Linux-x86_64.sh -b -p "$HOME/apps/anaconda3"
     declare -a executables=("python" "ipython" "jupyter" "pip" "conda")
     for exec in "${executables[@]}"
