@@ -25,3 +25,5 @@ install("testthat")
 install("roxygen2")
 install("Quandl")
 install("fst")
+install("devtools")
+
