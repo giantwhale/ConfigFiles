@@ -105,7 +105,7 @@ Rscript install_R_packages.R
 
 mkdir -p "$HOME/pkglib/R-3.4.0"
 echo ".libPaths('$HOME/pkglib/R-3.4.0')" > "${HOME}/.Rprofile"
-Rscript "${BASEDIR}/install_R_pkgs.R"
+PATH="${HOME}/bin:/usr/bin:/bin" Rscript "${BASEDIR}/install_R_pkgs.R"
 
 # Rstudio Server
 sudo apt install -y gdebi-core
