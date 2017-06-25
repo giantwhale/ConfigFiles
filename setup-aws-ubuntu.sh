@@ -19,6 +19,7 @@ mkdir -p ~/apps/bin
 cp ~/.bashrc ~/.bashrc_bk
 
 sudo apt install -y emacs
+sudo apt install -y libssl-dev
 
 # setting up config file
 # =================================================
@@ -88,6 +89,10 @@ tar xf R-3.4.0.tar.gz
 cd R-3.4.0
 ./configure --prefix="$HOME/apps/R-3.4.0" --enable-R-shlib
 make && make install
+
+# R colorout
+git clone https://github.com/jalvesaq/colorout.git
+R CMD INSTALL colorout
 
 declare -a executables=("R" "Rscript")
 for exec in "${executables[@]}"
