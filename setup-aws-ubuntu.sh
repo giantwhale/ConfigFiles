@@ -18,6 +18,7 @@ done
 mkdir -p ~/apps/bin
 cp ~/.bashrc ~/.bashrc_bk
 
+sudo apt update
 sudo apt install -y emacs
 sudo apt install -y libssl-dev
 
