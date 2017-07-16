@@ -3,7 +3,7 @@ echo $BASEDIR
 
 # Argument Parse
 # =================================================
-WITH_PYTHON3=false
+WITH_PYTHON3=true
 
 for arg in "$@"
 do
