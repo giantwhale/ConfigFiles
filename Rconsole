@@ -4,7 +4,7 @@
 
 ## Style
 # This can be `yes' (for MDI) or `no' (for SDI).
-MDI = yes
+MDI = no
 # the next two are only relevant for MDI
 toolbar = yes
 statusbar = no
@@ -46,7 +46,7 @@ yconsole = 0
 # The internal pager can displays help in a single window
 # or in multiple windows (one for each topic)
 # pagerstyle can be set to `singlewindow' or `multiplewindows'
-pagerstyle = multiplewindows
+pagerstyle = singlewindow
 
 
 ## Colours for console and pager(s)
