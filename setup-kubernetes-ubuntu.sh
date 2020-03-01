@@ -1,5 +1,13 @@
 sudo apt update
-sudo apt install emacs
+sudo apt install emacs unzip
+
+# Install awscli
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install 1>/dev/null 2>&1
+rm awscliv2.zip
+rm -rf aws
+echo "aws version: $(aws --version)"
 
 cat <<EOT > /home/ubuntu/.emacs
 ;; disable backup files
@@ -44,4 +52,9 @@ chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin/kubectl
 
 echo "kubectl version: $(kubectl version --client)"
+
+echo "Generate ssh with no password"
+ssh-keygen -b 2048 -t rsa -f /home/ubuntu/.ssh/id_rsa -q -N ""
+
+
 
