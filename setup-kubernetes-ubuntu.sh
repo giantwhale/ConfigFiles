@@ -1,5 +1,5 @@
 sudo apt update
-sudo apt install emacs unzip
+sudo apt install emacs unzip bash-completion
 
 # Install awscli
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
