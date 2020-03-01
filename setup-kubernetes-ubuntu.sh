@@ -50,7 +50,7 @@ echo "eksctl version: $(eksctl version)"
 curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
 chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin/kubectl
-
+echo "source <(kubectl completion bash)" >> ${HOME}/.bashrc
 echo "kubectl version: $(kubectl version --client)"
 
 echo "Generate ssh with no password"
